@@ -1,0 +1,15 @@
+---
+- name: Create iaac file
+  hosts: iaas
+  tasks:
+    - name: Invoking the role for file creation
+      include_role:
+        name: iaac-creator
+
+- name: Get issue content
+  hosts: all
+  roles:
+    - issue-reader
+  tasks:
+    - debug:
+        msg: "Server {{ ansible_hostname }} has the file /etc/isue with the following content: {{ issue['content'] | b64decode  }} "

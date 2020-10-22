@@ -1,0 +1,5 @@
+---
+- name: Read /etc/issue into variable
+  slurp:
+    src: /etc/issue
+  register: issue

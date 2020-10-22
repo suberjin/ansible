@@ -1,0 +1,8 @@
+---
+- name: Create /etc/iaac file
+  copy: 
+    dest: /etc/iaac 
+    content: ""
+    mode: '0500'
+    owner: root
+    group: root
